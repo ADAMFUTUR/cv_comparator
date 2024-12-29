@@ -30,7 +30,7 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 1. Clonez le dépôt :
 
    ```bash
-   git clone https://github.com/votre_nom_utilisateur/cv_comparator.git
+   git clone https://github.com/adamfutur/cv_comparator.git
    cd cv_comparator
    ```
 
@@ -87,7 +87,7 @@ Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce proje
 
 ## Auteurs
 
-- Votre Nom - [Votre Profil GitHub](https://github.com/votre_nom_utilisateur)
+- Adam IMLOUL - [Votre Profil GitHub](https://github.com/adamfutur)
 
 ## License
 
