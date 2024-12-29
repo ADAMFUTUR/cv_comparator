@@ -87,7 +87,7 @@ Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce proje
 
 ## Auteurs
 
-- Adam IMLOUL - [Votre Profil GitHub](https://github.com/adamfutur)
+- Adam IMLOUL - [GitHub](https://github.com/adamfutur)
 
 ## License
 
