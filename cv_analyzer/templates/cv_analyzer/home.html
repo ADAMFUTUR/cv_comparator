@@ -1,0 +1,48 @@
+{% extends 'cv_analyzer/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center mb-5">
+        <h1 class="display-4 mb-3">Find the Perfect Match</h1>
+        <p class="lead text-muted mb-4">Upload CVs and let our AI-powered system find the best candidate for your position</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{% url 'upload_cv' %}" class="btn btn-primary">
+                <i class="bi bi-upload me-2"></i>Upload CV
+            </a>
+            <a href="{% url 'compare_cvs' %}" class="btn btn-outline-primary">
+                <i class="bi bi-search me-2"></i>Compare CVs
+            </a>
+        </div>
+    </div>
+
+    <div class="row g-4 py-5">
+        <div class="col-md-4">
+            <div class="card h-100 p-4">
+                <div class="text-center">
+                    <i class="bi bi-lightning-charge feature-icon"></i>
+                    <h3>Smart Analysis</h3>
+                    <p class="text-muted">Our advanced algorithm analyzes skills, experience, and job relevance to find the best match.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 p-4">
+                <div class="text-center">
+                    <i class="bi bi-graph-up feature-icon"></i>
+                    <h3>Detailed Scoring</h3>
+                    <p class="text-muted">Get comprehensive scoring based on multiple factors including skills match and experience.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 p-4">
+                <div class="text-center">
+                    <i class="bi bi-clock feature-icon"></i>
+                    <h3>Quick Results</h3>
+                    <p class="text-muted">Get instant comparison results to make faster and better hiring decisions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

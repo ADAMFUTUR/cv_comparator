@@ -1,0 +1,79 @@
+{% extends 'cv_analyzer/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card p-4">
+                <div class="text-center mb-4">
+                    <i class="bi bi-search-heart feature-icon"></i>
+                    <h2>Compare CVs</h2>
+                    <p class="text-muted">Enter job requirements to find the best match</p>
+                </div>
+
+                {% if error %}
+                <div class="alert alert-danger d-flex align-items-center mb-4" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                    <div>{{ error }}</div>
+                </div>
+                {% endif %}
+
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    
+                    {% for field in form %}
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">
+                            {{ field.label }}
+                            {% if field.field.required %}
+                            <span class="text-danger">*</span>
+                            {% endif %}
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                {% if field.name == 'title' %}
+                                <i class="bi bi-briefcase"></i>
+                                {% else %}
+                                <i class="bi bi-tools"></i>
+                                {% endif %}
+                            </span>
+                            {{ field.errors }}
+                            {{ field }}
+                        </div>
+                        {% if field.help_text %}
+                        <div class="form-text text-muted">{{ field.help_text }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-search me-2"></i>Find Best Match
+                        </button>
+                        <a href="{% url 'upload_cv' %}" class="btn btn-outline-primary">
+                            <i class="bi bi-upload me-2"></i>Upload Another CV
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Add Bootstrap form validation
+(function () {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+</script>
+{% endblock %}
